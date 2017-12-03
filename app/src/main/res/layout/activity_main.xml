@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,26 +16,14 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:scaleType="fitXY"
         android:src="@drawable/udacity3" />
-
-    <TextView
-        android:id="@+id/space"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/space">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,18 +31,19 @@
                 android:layout_marginLeft="30dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:onClick="googleMapsIntent"
-                    android:src="@drawable/ic_location_on_white_24dp" />
+
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
+                    android:id="@+id/address"
                     android:text="2465 Latham St\nMountain View, CA 94043"
-                    android:textColor="#29b6f6"
+                    android:textColor="@color/colorPrimary"
+                    android:background="#7c60bede"
+                    android:onClick="googleMapsIntent"
+                    android:drawableLeft="@drawable/ic_location_on_white_24dp"
+                    android:autoLink="map"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -59,19 +53,17 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="40dp"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_phone_white_24dp"
-                    android:onClick="phoneIntent"
-                    android:textAlignment="center" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="650-555-5555"
-                    android:textColor="#29b6f6"
+                    android:autoLink="phone"
+                    android:background="#7c60bede"
+                    android:drawableLeft="@drawable/ic_phone_white_24dp"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/phone"
+                    android:onClick="phoneIntent"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -82,17 +74,16 @@
                 android:layout_marginTop="40dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:onClick="webIntent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_language_white_24dp" />
-
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:text="www.udacity.com"
-                    android:textColor="#29b6f6"
+                    android:background="#7c60bede"
+                    android:autoLink="web"
+                    android:id="@+id/web"
+                    android:onClick="webIntent"
+                    android:drawableLeft="@drawable/ic_language_white_24dp"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="16dp" />
             </LinearLayout>
 
@@ -101,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -118,13 +110,15 @@
                     android:src="@drawable/twitter" />
 
                 <ImageView
+                    android:id="@+id/linkedin"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:onClick="linkedinIntent"
+                    android:onClick="linkedInIntent"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:src="@drawable/linkedinicon" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+
 </RelativeLayout>
+</ScrollView>
