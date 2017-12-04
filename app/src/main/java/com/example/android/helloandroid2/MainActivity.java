@@ -179,4 +179,5 @@ public class MainActivity extends FragmentActivity implements Animation.Animatio
         text2.startAnimation(anim3);
         text3.startAnimation(anim4);
     }
+
 }
